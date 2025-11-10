@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flooring Works - Marble & Tile Installation Services | Heaven Technical Services</title>
+    <meta name="description" content="Expert flooring services including marble work and tile installation in Dubai, UAE.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Overlapping Image Styles */
+        .overlap-section {
+            position: relative;
+            padding: 100px 40px;
+            overflow: visible;
+        }
+
+        .overlap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .overlap-img {
+            position: absolute;
+            right: -100px;
+            top: 50px;
+            width: 500px;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            transform: rotate(3deg);
+            z-index: 5;
+            border: 5px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: fadeInRotate 1s ease forwards 0.4s;
+        }
+
+        .overlap-img:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes fadeInRotate {
+            from {
+                opacity: 0;
+                transform: rotate(3deg) translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(3deg) translateX(0);
+            }
+        }
+
+        .overlap-img::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-pink);
+            opacity: 0.2;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+
+        .overlap-img:hover::after {
+            width: 150px;
+            height: 150px;
+            opacity: 0.3;
+        }
+
+        .overlap-content {
+            max-width: 650px;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+        }
+
+        .side-overlap-section {
+            position: relative;
+            padding: 120px 40px;
+            background: var(--bg-white);
+        }
+
+        .side-overlap-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .side-img-stack {
+            position: relative;
+            height: 600px;
+        }
+
+        .side-img-back {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 85%;
+            height: 520px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            z-index: 1;
+            border: 4px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: slideInLeft 1s ease forwards 0.3s;
+        }
+
+        .side-img-back:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 30px 80px rgba(216, 63, 135, 0.3);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .side-img-front {
+            position: absolute;
+            right: 0;
+            bottom: 40px;
+            width: 70%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            z-index: 2;
+            border: 6px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: slideInRight 1s ease forwards 0.6s;
+        }
+
+        .side-img-front:hover {
+            transform: translateX(10px) scale(1.05);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .diagonal-section {
+            position: relative;
+            padding: 120px 40px;
+            overflow: hidden;
+            background: var(--bg-white);
+        }
+
+        .diagonal-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .diagonal-img {
+            position: relative;
+            transform: rotate(-2deg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            transition: all 0.6s ease;
+            border: 5px solid var(--primary-pink);
+            opacity: 0;
+            animation: fadeInDiagonal 1s ease forwards 0.4s;
+        }
+
+        .diagonal-img:hover {
+            transform: rotate(0deg) scale(1.03);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes fadeInDiagonal {
+            from {
+                opacity: 0;
+                transform: rotate(-2deg) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(-2deg) scale(1);
+            }
+        }
+
+        .diagonal-img::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            width: 80px;
+            height: 80px;
+            background: var(--primary-pink);
+            opacity: 0.3;
+            border-radius: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .diagonal-img:hover::after {
+            width: 120px;
+            height: 120px;
+            opacity: 0.4;
+        }
+
+        .floating-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-pink);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(216, 63, 135, 0.4);
+            z-index: 20;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .overlap-img img,
+        .side-img-back img,
+        .side-img-front img,
+        .diagonal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .overlap-img:hover img,
+        .side-img-back:hover img,
+        .side-img-front:hover img,
+        .diagonal-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlap-img:hover,
+        .side-img-front:hover,
+        .diagonal-img:hover {
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.5), 
+                        0 0 40px rgba(216, 63, 135, 0.3);
+        }
+
+        @media (max-width: 1200px) {
+            .overlap-img {
+                position: relative;
+                right: 0;
+                width: 100%;
+                max-width: 500px;
+                margin: 40px auto;
+                transform: none;
+            }
+
+            .overlap-content {
+                max-width: 100%;
+            }
+
+            .side-overlap-grid,
+            .diagonal-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .side-img-stack {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-placeholder">HTS</div>
+                <span>Heaven Technical Services</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="services-dropdown">
+                    <a href="services.html" class="active">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="services.html">All Services</a>
+                        <a href="interior-works.html">Interior Works</a>
+                        <a href="finishing-works.html">Finishing Works</a>
+                        <a href="flooring-works.html" style="background: var(--bg-light); color: var(--primary-pink);">Flooring Works</a>
+                        <a href="technical-services.html">Technical Services</a>
+                        <a href="fitout.html">Fit-Out Solutions</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html">Home</a> / <a href="services.html">Services</a> / <span>Flooring Works</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero small">
+        <div class="hero-content">
+            <h1>Flooring Works</h1>
+            <p>Elegant marble work and expert tile installation services for lasting beauty and durability</p>
+        </div>
+    </section>
+
+    <!-- Overlap Section - Introduction -->
+    <div class="overlap-section bg-light">
+        <div class="overlap-container">
+            <div class="overlap-img">
+                <div class="floating-badge">Premium Flooring</div>
+                <div class="img-placeholder" style="height: 100%;">
+                    Marble Flooring<br>Project Photo<br>(500x600)
+                </div>
+            </div>
+
+            <div class="overlap-content">
+                <h2 style="font-size: 38px; margin-bottom: 20px; color: var(--text-dark); font-weight: 700;">Premium Flooring Solutions</h2>
+                <p style="font-size: 17px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Our flooring works division specializes in elegant marble installations and expert tile work that combines aesthetic appeal with lasting durability.
+                </p>
+                <p style="font-size: 17px; color: var(--text-light); line-height: 1.9; margin-bottom: 25px;">
+                    From luxurious marble to versatile tile solutions, we create floors that make a statement and stand the test of time.
+                </p>
+                <div style="display: flex; gap: 30px; margin-top: 25px;">
+                    <div>
+                        <h4 style="font-size: 36px; color: var(--primary-pink); font-weight: 700; margin-bottom: 5px;">250+</h4>
+                        <p style="color: var(--text-light); font-size: 14px;">Flooring Projects</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 36px; color: var(--primary-pink); font-weight: 700; margin-bottom: 5px;">20+</h4>
+                        <p style="color: var(--text-light); font-size: 14px;">Material Options</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Overlap Section - Marble Work -->
+    <div class="side-overlap-section">
+        <div class="side-overlap-grid">
+            <div>
+                <h2 style="font-size: 42px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">Marble Work Excellence</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Timeless elegance with natural stone installations. Our marble specialists deliver luxurious flooring that adds sophistication and lasting value to any space.
+                </p>
+                
+                <h4 style="margin-top: 30px; margin-bottom: 20px; color: var(--text-dark); font-size: 22px;">What We Offer:</h4>
+                <div style="display: grid; gap: 15px;">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">💎</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Italian, Spanish, and Indian marble installations</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✨</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Diamond polishing and restoration services</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">🏛️</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Countertops, staircases, and wall cladding</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">🎨</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Custom patterns, borders, and medallions</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">🛡️</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Sealing, protection, and maintenance services</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-img-stack">
+                <div class="side-img-back">
+                    <div class="img-placeholder" style="height: 100%;">
+                        Marble Installation<br>Process Photo<br>(85% width)
+                    </div>
+                </div>
+                <div class="side-img-front">
+                    <div class="img-placeholder" style="height: 100%;">
+                        Polished Marble<br>Detail Shot<br>(70% width)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diagonal Section - Tile Installation -->
+    <div class="diagonal-section">
+        <div class="diagonal-grid">
+            <div class="diagonal-img">
+                <div class="img-placeholder" style="height: 550px;">
+                    Tile Installation<br>Project Photo<br>(Full width)
+                </div>
+            </div>
+
+            <div>
+                <h2 style="font-size: 42px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">Floor Tile Installation</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Versatile and durable tiling solutions for residential and commercial spaces. From ceramic to decorative mosaics, we deliver precision installations.
+                </p>
+                
+                <div style="background: var(--bg-light); padding: 30px; border-radius: 15px; margin-top: 30px;">
+                    <h4 style="margin-bottom: 20px; color: var(--text-dark); font-size: 20px;">Our Tile Solutions:</h4>
+                    <div style="display: grid; gap: 12px;">
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Ceramic & Porcelain:</strong> High-quality tiles for indoor and outdoor applications</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Decorative Tiles:</strong> Mosaics, patterns, and artistic designs</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Specialized Tiling:</strong> Waterproof systems for bathrooms and wet areas</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Commercial Grade:</strong> Heavy-duty tiles for high-traffic areas</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px; padding: 25px; background: white; border-left: 4px solid var(--primary-pink); border-radius: 10px;">
+                    <p style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Perfect Installation Every Time</p>
+                    <p style="color: var(--text-light); font-size: 15px; line-height: 1.7;">Precision measurements, perfect alignment, proper spacing, and flawless grouting for lasting beauty.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process Section -->
+    <section class="bg-light">
+        <h2 class="section-title">Our Installation Process</h2>
+        <p class="section-subtitle">Professional approach from start to finish</p>
+
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 60px;">
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--primary-pink); text-align: center;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; color: white;">1</div>
+                <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--text-dark);">Site Inspection</h3>
+                <p style="color: var(--text-light); line-height: 1.7;">Thorough assessment of the area and substrate preparation requirements</p>
+            </div>
+
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--primary-pink); text-align: center;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; color: white;">2</div>
+                <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--text-dark);">Material Selection</h3>
+                <p style="color: var(--text-light); line-height: 1.7;">Expert guidance in choosing the perfect marble or tiles for your project</p>
+            </div>
+
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--primary-pink); text-align: center;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; color: white;">3</div>
+                <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--text-dark);">Preparation</h3>
+                <p style="color: var(--text-light); line-height: 1.7;">Proper surface preparation, leveling, and waterproofing as needed</p>
+            </div>
+
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--primary-pink); text-align: center;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; color: white;">4</div>
+                <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--text-dark);">Installation</h3>
+                <p style="color: var(--text-light); line-height: 1.7;">Precision installation with proper spacing, alignment, and adhesive application</p>
+            </div>
+
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--primary-pink); text-align: center;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; color: white;">5</div>
+                <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--text-dark);">Finishing</h3>
+                <p style="color: var(--text-light); line-height: 1.7;">Grouting, polishing, sealing, and final quality inspection</p>
+            </div>
+
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--primary-pink); text-align: center;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; color: white;">6</div>
+                <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--text-dark);">Maintenance Guide</h3>
+                <p style="color: var(--text-light); line-height: 1.7;">Comprehensive care instructions for long-lasting beauty</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-white">
+        <h2 class="section-title">Why Choose Our Flooring Services?</h2>
+        <p class="section-subtitle">Excellence in every installation</p>
+
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px;">
+            <div style="display: flex; gap: 15px; padding: 30px; background: var(--bg-light); border-radius: 15px;">
+                <div style="font-size: 32px;">✅</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Expert Installers</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Highly skilled craftsmen specializing in marble and tile installation</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; padding: 30px; background: var(--bg-light); border-radius: 15px;">
+                <div style="font-size: 32px;">💎</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Premium Materials</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Wide selection of high-quality marble and tiles from trusted suppliers</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; padding: 30px; background: var(--bg-light); border-radius: 15px;">
+                <div style="font-size: 32px;">📏</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Precision Work</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Accurate measurements, perfect alignment, and flawless finishing</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; padding: 30px; background: var(--bg-light); border-radius: 15px;">
+                <div style="font-size: 32px;">🛡️</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Quality Guarantee</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Warranty on workmanship and materials for your peace of mind</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-light">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="background: var(--primary-dark); color: white; padding: 80px 60px; border-radius: 20px; text-align: center;">
+                <h2 style="font-size: 42px; margin-bottom: 20px; color: white;">Ready to Transform Your Floors?</h2>
+                <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Contact us today for a free consultation and quote</p>
+                <a href="contact.html" class="cta-button">Get Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="bg-white">
+        <h2 class="section-title">Explore Other Services</h2>
+        <p class="section-subtitle">Complete solutions for all your needs</p>
+        
+        <div class="services-overview-grid">
+            <a href="interior-works.html" class="service-overview-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Interior Works</h3>
+                <p>Gypsum, ceiling, and partition systems.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="finishing-works.html" class="service-overview-card">
+                <div class="service-icon">🎨</div>
+                <h3>Finishing Works</h3>
+                <p>Painting, cladding, and joinery services.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="technical-services.html" class="service-overview-card">
+                <div class="service-icon">⚡</div>
+                <h3>Technical Services</h3>
+                <p>MEP and plumbing solutions.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="fitout.html" class="service-overview-card">
+                <div class="service-icon">🏢</div>
+                <h3>Fit-Out Solutions</h3>
+                <p>Complete fit-out services.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Heaven Technical Services</h4>
+                <p>Leading provider of high-quality interior and fit-out solutions in Dubai, UAE.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="interior-works.html">Interior Works</a></li>
+                    <li><a href="finishing-works.html">Finishing Works</a></li>
+                    <li><a href="flooring-works.html">Flooring Works</a></li>
+                    <li><a href="technical-services.html">Technical Services</a></li>
+                    <li><a href="fitout.html">Fit-Out Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📧 info@heaventech.com</p>
+                <p>📞 +971 XX XXX XXXX</p>
+                <p>📍 Dubai, UAE</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heaven Technical Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

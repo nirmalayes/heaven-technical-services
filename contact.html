@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Heaven Technical Services | Get Free Quote</title>
+    <meta name="description" content="Contact Heaven Technical Services for interior and fit-out solutions in Dubai. Get a free consultation and quote today.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-hero {
+            margin-top: 80px;
+            min-height: 50vh;
+            background: var(--primary-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary-pink);
+            top: -150px;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent-coral);
+            bottom: -100px;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .contact-main-section {
+            padding: 100px 40px;
+            background: var(--bg-light);
+        }
+
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 3px solid var(--primary-pink);
+            transition: all 0.5s ease;
+            position: sticky;
+            top: 100px;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(216, 63, 135, 0.2);
+            border-color: var(--accent-coral);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            padding: 25px;
+            background: var(--bg-light);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-pink);
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-pink);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover .info-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--accent-coral);
+        }
+
+        .form-card {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 3px solid var(--primary-pink);
+            transition: all 0.5s ease;
+        }
+
+        .form-card:hover {
+            box-shadow: 0 20px 60px rgba(216, 63, 135, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .form-group:nth-child(1) { animation-delay: 0.1s; }
+        .form-group:nth-child(2) { animation-delay: 0.2s; }
+        .form-group:nth-child(3) { animation-delay: 0.3s; }
+        .form-group:nth-child(4) { animation-delay: 0.4s; }
+        .form-group:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--bg-white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-pink);
+            box-shadow: 0 0 0 4px rgba(216, 63, 135, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary-pink);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-coral);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(216, 63, 135, 0.4);
+        }
+
+        .map-section {
+            padding: 0;
+            margin: 60px 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 5px solid var(--primary-pink);
+            transition: all 0.5s ease;
+        }
+
+        .map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(216, 63, 135, 0.3);
+            border-color: var(--accent-coral);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 968px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-info-card {
+                position: relative;
+                top: 0;
+            }
+
+            .form-card {
+                padding: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-placeholder">HTS</div>
+                <span>Heaven Technical Services</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="services-dropdown">
+                    <a href="services.html">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="services.html">All Services</a>
+                        <a href="interior-works.html">Interior Works</a>
+                        <a href="finishing-works.html">Finishing Works</a>
+                        <a href="flooring-works.html">Flooring Works</a>
+                        <a href="technical-services.html">Technical Services</a>
+                        <a href="fitout.html">Fit-Out Solutions</a>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
+        <div class="hero-content" style="position: relative; z-index: 2;">
+            <h1>Get In Touch</h1>
+            <p>Let's discuss your project and bring your vision to life with our expert services</p>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section class="contact-main-section">
+        <div class="contact-wrapper">
+            <!-- Contact Information -->
+            <div class="contact-info-card">
+                <h2 style="font-size: 32px; margin-bottom: 15px; color: var(--text-dark);">Contact Information</h2>
+                <p style="color: var(--text-light); margin-bottom: 35px; line-height: 1.7;">
+                    Have a project in mind? Reach out to us and let's create something amazing together.
+                </p>
+
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div>
+                        <strong style="display: block; color: var(--text-dark); font-size: 16px; margin-bottom: 5px;">Email Address</strong>
+                        <a href="mailto:info@heaventech.com" style="color: var(--text-light); text-decoration: none;">info@heaventech.com</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <strong style="display: block; color: var(--text-dark); font-size: 16px; margin-bottom: 5px;">Phone Number</strong>
+                        <a href="tel:+971XXXXXXXX" style="color: var(--text-light); text-decoration: none;">+971 XX XXX XXXX</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <strong style="display: block; color: var(--text-dark); font-size: 16px; margin-bottom: 5px;">Office Location</strong>
+                        <span style="color: var(--text-light);">Dubai, United Arab Emirates</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div>
+                        <strong style="display: block; color: var(--text-dark); font-size: 16px; margin-bottom: 5px;">Working Hours</strong>
+                        <span style="color: var(--text-light); display: block;">Monday - Saturday</span>
+                        <span style="color: var(--text-light);">9:00 AM - 6:00 PM</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%); border-radius: 15px; text-align: center;">
+                    <h4 style="color: white; font-size: 20px; margin-bottom: 10px;">Need Immediate Assistance?</h4>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin-bottom: 15px;">Call us now for urgent inquiries</p>
+                    <a href="tel:+971XXXXXXXX" style="display: inline-block; padding: 12px 30px; background: white; color: var(--primary-pink); text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease;">
+                        📞 Call Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="form-card">
+                <h2 style="font-size: 32px; margin-bottom: 15px; color: var(--text-dark);">Send Us a Message</h2>
+                <p style="color: var(--text-light); margin-bottom: 35px; line-height: 1.7;">
+                    Fill out the form below and we'll get back to you within 24 hours.
+                </p>
+
+                <form id="contactForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+971 XX XXX XXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="interior-works">Interior Works</option>
+                                <option value="finishing-works">Finishing Works</option>
+                                <option value="flooring-works">Flooring Works</option>
+                                <option value="technical-services">Technical Services</option>
+                                <option value="fitout">Fit-Out Solutions</option>
+                                <option value="gypsum">Gypsum Installation</option>
+                                <option value="ceiling">Ceiling Works</option>
+                                <option value="partition">Partition Systems</option>
+                                <option value="painting">Painting Services</option>
+                                <option value="cladding">Cladding Works</option>
+                                <option value="joinery">Joinery & Carpentry</option>
+                                <option value="marble">Marble Work</option>
+                                <option value="tiling">Floor Tile Installation</option>
+                                <option value="mep">MEP Solutions</option>
+                                <option value="plumbing">Plumbing Services</option>
+                                <option value="other">Other Services</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your project requirements, timeline, and budget..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span style="position: relative; z-index: 1;">Send Message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="map-section">
+        <h2 style="text-align: center; font-size: 38px; margin-bottom: 40px; color: var(--text-dark);">Find Us</h2>
+        <div class="map-container">
+            <div class="map-placeholder">
+                🗺️ Google Map Location<br>
+                (Add your Google Maps embed code here)
+            </div>
+            <!-- To add Google Maps:
+            <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Heaven Technical Services</h4>
+                <p>Leading provider of high-quality interior and fit-out solutions in Dubai, UAE.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="interior-works.html">Interior Works</a></li>
+                    <li><a href="finishing-works.html">Finishing Works</a></li>
+                    <li><a href="flooring-works.html">Flooring Works</a></li>
+                    <li><a href="technical-services.html">Technical Services</a></li>
+                    <li><a href="fitout.html">Fit-Out Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📧 info@heaventech.com</p>
+                <p>📞 +971 XX XXX XXXX</p>
+                <p>📍 Dubai, UAE</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heaven Technical Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

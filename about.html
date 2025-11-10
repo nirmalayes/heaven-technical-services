@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Heaven Technical Services | Interior Fit-Out Experts Dubai</title>
+    <meta name="description" content="Learn about Heaven Technical Services - Leading interior and fit-out company in Dubai with 10+ years of experience.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+        .hero.small {
+            background-image: url('../images/tile.png');
+        }
+
+        .stats-section {
+            background: var(--primary-dark);
+            padding: 80px 40px;
+            margin-top: -60px;
+            position: relative;
+            z-index: 100;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            text-align: center;
+        }
+
+        .stat-item {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.2s; }
+        .stat-item:nth-child(2) { animation-delay: 0.4s; }
+        .stat-item:nth-child(3) { animation-delay: 0.6s; }
+        .stat-item:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+        }
+
+        /* Story Section with Image */
+        .story-section {
+            padding: 120px 40px;
+            background: var(--bg-white);
+        }
+
+        .story-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .story-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            border: 5px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: slideInRight 1s ease forwards 0.5s;
+        }
+
+        .story-image:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary-pink);
+            transition: all 0.5s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .value-card:nth-child(1) { animation-delay: 0.2s; }
+        .value-card:nth-child(2) { animation-delay: 0.4s; }
+        .value-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(216, 63, 135, 0.2);
+            border-top-color: var(--accent-coral);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+            transition: all 0.5s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* Team/Timeline Section */
+        .timeline-section {
+            padding: 100px 40px;
+            background: var(--bg-light);
+            position: relative;
+        }
+
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-pink);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-pink);
+            border: 5px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 0 10px rgba(216, 63, 135, 0.1);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary-pink);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(216, 63, 135, 0.2);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            grid-column: 2;
+        }
+
+        @media (max-width: 968px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-placeholder">HTS</div>
+                <span>Heaven Technical Services</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li class="services-dropdown">
+                    <a href="services.html">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="services.html">All Services</a>
+                        <a href="interior-works.html">Interior Works</a>
+                        <a href="finishing-works.html">Finishing Works</a>
+                        <a href="flooring-works.html">Flooring Works</a>
+                        <a href="technical-services.html">Technical Services</a>
+                        <a href="fitout.html">Fit-Out Solutions</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero small">
+        <div class="hero-content">
+            <h1>About Us</h1>
+            <p>Building excellence through precision craftsmanship and innovative solutions</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Client Satisfaction</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Team Members</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <div class="story-grid">
+            <div>
+                <h2 style="font-size: 44px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">Our Story</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Heaven Technical Services was established with a vision to transform the interior and fit-out industry in the UAE. Since our inception, we have been committed to delivering excellence in every project we undertake.
+                </p>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    What started as a small team of passionate craftsmen has grown into one of Dubai's most trusted technical services companies. Our journey has been marked by countless successful projects, satisfied clients, and a reputation built on quality and reliability.
+                </p>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 30px;">
+                    Today, we specialize in comprehensive interior solutions including gypsum installation, ceiling works, partition systems, painting, cladding, joinery, flooring, and complete fit-out services for retail, residential, hospitality, and family entertainment centers.
+                </p>
+                <a href="contact.html" class="cta-button">Work With Us</a>
+            </div>
+
+            <div class="story-image">
+                <div style="width: 100%; height: 550px; background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 600; text-align: center; padding: 30px;">
+                    Company/Team Photo<br>(600x550)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section style="padding: 100px 40px; background: var(--bg-light);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Our Mission & Vision</h2>
+            <p class="section-subtitle">Guided by purpose, driven by excellence</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 60px;">
+                <div style="background: white; padding: 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-left: 6px solid var(--primary-pink);">
+                    <h3 style="font-size: 32px; margin-bottom: 20px; color: var(--text-dark);">🎯 Our Mission</h3>
+                    <p style="font-size: 17px; color: var(--text-light); line-height: 1.9;">
+                        To deliver exceptional interior and fit-out solutions that exceed client expectations through innovative design, superior craftsmanship, and unwavering commitment to quality. We strive to transform spaces into functional works of art while maintaining the highest standards of professionalism and integrity.
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-left: 6px solid var(--accent-coral);">
+                    <h3 style="font-size: 32px; margin-bottom: 20px; color: var(--text-dark);">🔭 Our Vision</h3>
+                    <p style="font-size: 17px; color: var(--text-light); line-height: 1.9;">
+                        To be the most trusted and sought-after technical services company in the UAE, recognized for our innovation, quality, and customer-centric approach. We envision creating spaces that not only meet functional requirements but inspire and enhance the lives of those who use them.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section style="padding: 100px 40px; background: var(--bg-white);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Our Core Values</h2>
+            <p class="section-subtitle">The principles that guide everything we do</p>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--text-dark);">Excellence</h3>
+                    <p style="color: var(--text-light); line-height: 1.8;">
+                        We pursue excellence in every aspect of our work, from initial consultation to final delivery, ensuring the highest quality standards.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--text-dark);">Integrity</h3>
+                    <p style="color: var(--text-light); line-height: 1.8;">
+                        Honesty, transparency, and ethical practices form the foundation of our relationships with clients, partners, and team members.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--text-dark);">Innovation</h3>
+                    <p style="color: var(--text-light); line-height: 1.8;">
+                        We embrace new technologies, techniques, and ideas to deliver cutting-edge solutions that set industry benchmarks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Journey Timeline -->
+    <section class="timeline-section">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <h2 style="font-size: 44px; margin-bottom: 15px; color: var(--text-dark); font-weight: 700;">Our Journey</h2>
+            <p style="font-size: 18px; color: var(--text-light);">Milestones that define our growth and success</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--primary-pink);">2014 - Foundation</h3>
+                    <p style="color: var(--text-light); line-height: 1.8;">
+                        Heaven Technical Services established with a small team of dedicated professionals, focusing on gypsum and ceiling works.
+                    </p>
+                </div>
+                <div></div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div></div>
+                <div class="timeline-content">
+                    <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--primary-pink);">2017 - Expansion</h3>
+                    <p style="color: var(--text-light); line-height: 1.8;">
+                        Expanded services to include complete fit-out solutions, flooring works, and MEP services. Completed 100+ projects.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--primary-pink);">2020 - Recognition</h3>
+                    <p style="color: var(--text-light); line-height: 1.8;">
+                        Achieved significant milestones with major contracts in retail and hospitality sectors. Recognized as a trusted partner.
+                    </p>
+                </div>
+                <div></div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div></div>
+                <div class="timeline-content">
+                    <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--primary-pink);">2025 - Present</h3>
+                    <p style="color: var(--text-light); line-height: 1.8;">
+                        Now a leading technical services company with 500+ completed projects, serving diverse sectors across the UAE.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 100px 40px; background: var(--bg-white);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="background: var(--primary-dark); color: white; padding: 80px 60px; border-radius: 20px; text-align: center;">
+                <h2 style="font-size: 42px; margin-bottom: 20px; color: white;">Ready to Work Together?</h2>
+                <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Let's create something exceptional together. Contact us today to discuss your project.</p>
+                <a href="contact.html" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Heaven Technical Services</h4>
+                <p>Leading provider of high-quality interior and fit-out solutions in Dubai, UAE.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="interior-works.html">Interior Works</a></li>
+                    <li><a href="finishing-works.html">Finishing Works</a></li>
+                    <li><a href="flooring-works.html">Flooring Works</a></li>
+                    <li><a href="technical-services.html">Technical Services</a></li>
+                    <li><a href="fitout.html">Fit-Out Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📧 info@heaventech.com</p>
+                <p>📞 +971 XX XXX XXXX</p>
+                <p>📍 Dubai, UAE</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heaven Technical Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Works - Gypsum, Ceiling & Partition Services | Heaven Technical Services</title>
+    <meta name="description" content="Expert interior works including gypsum installation, ceiling works, and partition systems in Dubai, UAE.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero.small {
+            background-image: url('../images/interior.jpg');
+        }
+        /* Advanced Image Integration Styles */
+        .overlap-section {
+            position: relative;
+            padding: 100px 40px;
+            overflow: visible;
+        }
+
+        .overlap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .overlap-img {
+            position: absolute;
+            right: -100px;
+            top: 50px;
+            width: 500px;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            transform: rotate(3deg);
+            z-index: 5;
+            border: 5px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: fadeInRotate 1s ease forwards 0.4s;
+        }
+
+        .overlap-img:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes fadeInRotate {
+            from {
+                opacity: 0;
+                transform: rotate(3deg) translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(3deg) translateX(0);
+            }
+        }
+
+        /* Pink accent corner */
+        .overlap-img::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-pink);
+            opacity: 0.2;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+
+        .overlap-img:hover::after {
+            width: 150px;
+            height: 150px;
+            opacity: 0.3;
+        }
+
+        .overlap-content {
+            max-width: 650px;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Side by Side with Overlap */
+        .side-overlap-section {
+            position: relative;
+            padding: 120px 40px;
+            background: var(--bg-white);
+        }
+
+        .side-overlap-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .side-img-stack {
+            position: relative;
+            height: 600px;
+        }
+
+        .side-img-back {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 85%;
+            height: 520px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .side-img-front {
+            position: absolute;
+            right: 0;
+            bottom: 40px;
+            width: 70%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            z-index: 2;
+            border: 8px solid white;
+        }
+
+        /* Corner Integrated Image */
+        .corner-integrated {
+            position: relative;
+            padding: 100px 40px;
+            background: var(--bg-light);
+        }
+
+        .corner-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .corner-img {
+            position: absolute;
+            left: -60px;
+            bottom: -60px;
+            width: 420px;
+            height: 480px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            z-index: 5;
+        }
+
+        .corner-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            padding-left: 380px;
+            padding-bottom: 80px;
+        }
+
+        /* Floating Badge Style */
+        .floating-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-pink);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(216, 63, 135, 0.4);
+            z-index: 20;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Diagonal Split Section */
+        .diagonal-section {
+            position: relative;
+            padding: 120px 40px;
+            overflow: hidden;
+            background: var(--bg-white);
+        }
+
+        .diagonal-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .diagonal-img {
+            position: relative;
+            transform: rotate(-2deg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .diagonal-img:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        @media (max-width: 1200px) {
+            .overlap-img {
+                position: relative;
+                right: 0;
+                width: 100%;
+                max-width: 500px;
+                margin: 40px auto;
+                transform: none;
+            }
+
+            .overlap-content {
+                max-width: 100%;
+            }
+
+            .side-overlap-grid,
+            .diagonal-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .side-img-stack {
+                height: 500px;
+            }
+
+            .corner-content-grid {
+                grid-template-columns: 1fr;
+                padding-left: 0;
+                padding-bottom: 0;
+            }
+
+            .corner-img {
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                max-width: 420px;
+                margin: 40px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-placeholder">HTS</div>
+                <span>Heaven Technical Services</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="services-dropdown">
+                    <a href="services.html" class="active">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="services.html">All Services</a>
+                        <a href="interior-works.html" style="background: var(--bg-light); color: var(--primary-pink);">Interior Works</a>
+                        <a href="finishing-works.html">Finishing Works</a>
+                        <a href="flooring-works.html">Flooring Works</a>
+                        <a href="technical-services.html">Technical Services</a>
+                        <a href="fitout.html">Fit-Out Solutions</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html">Home</a> / <a href="services.html">Services</a> / <span>Interior Works</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero small">
+        <div class="hero-content">
+            <h1>Interior Works</h1>
+            <p>Professional gypsum installation, ceiling works, and partition systems for optimal space design and functionality</p>
+        </div>
+    </section>
+
+    <!-- Overlap Section - Introduction with Image -->
+    <div class="overlap-section bg-light">
+        <div class="overlap-container">
+            <div class="overlap-img">
+                <div class="floating-badge">Expert Craftsmanship</div>
+                <div class="img-placeholder" style="height: 100%;">
+                   <img src="/images/Ma.png"> Gypsum Installation<br>Project Photo<br>(500x600)
+                </div>
+            </div>
+
+            <div class="overlap-content">
+                <h2 style="font-size: 38px; margin-bottom: 20px; color: var(--text-dark); font-weight: 700;">Transform Your Interior Spaces</h2>
+                <p style="font-size: 17px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Our interior works division specializes in creating functional and aesthetically pleasing spaces through expert gypsum installation, innovative ceiling solutions, and custom partition systems.
+                </p>
+                <p style="font-size: 17px; color: var(--text-light); line-height: 1.9; margin-bottom: 25px;">
+                    With years of experience and a team of certified professionals, we deliver exceptional results that enhance both the form and function of your space.
+                </p>
+                <div style="display: flex; gap: 30px; margin-top: 25px;">
+                    <div>
+                        <h4 style="font-size: 36px; color: var(--primary-pink); font-weight: 700; margin-bottom: 5px;">200+</h4>
+                        <p style="color: var(--text-light); font-size: 14px;">Projects Completed</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 36px; color: var(--primary-pink); font-weight: 700; margin-bottom: 5px;">100%</h4>
+                        <p style="color: var(--text-light); font-size: 14px;">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Overlap Section - Gypsum Service -->
+    <div class="side-overlap-section">
+        <div class="side-overlap-grid">
+            <div>
+                <h2 style="font-size: 42px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">Gypsum Installation</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Expert gypsum board installation for walls, ceilings, and decorative elements. Our skilled craftsmen ensure precision finishing and professional results that meet the highest standards.
+                </p>
+                
+                <h4 style="margin-top: 30px; margin-bottom: 20px; color: var(--text-dark); font-size: 22px;">What We Offer:</h4>
+                <div style="display: grid; gap: 15px;">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Gypsum board wall installation</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Decorative gypsum elements and cornices</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">False ceiling gypsum work</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Moisture-resistant gypsum solutions</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Precision finishing ready for painting</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-img-stack">
+                <div class="side-img-back">
+                    <div class="img-placeholder" style="height: 100%;">
+                        <img src="/images/Ma.png">
+                        Gypsum Work<br>Before/After<br>(85% width)
+                    </div>
+                </div>
+                <div class="side-img-front">
+                    <div class="img-placeholder" style="height: 100%;">
+                        <img src="/images/Ma.png">
+                        Detail Shot<br>Gypsum Finish<br>(70% width)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diagonal Section - Ceiling Works -->
+    <div class="diagonal-section">
+        <div class="diagonal-grid">
+            <div class="diagonal-img">
+                <div class="img-placeholder" style="height: 550px;">
+                    Ceiling Works<br>Project Photo<br>(Full width)
+                </div>
+            </div>
+
+            <div>
+                <h2 style="font-size: 42px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">Ceiling Works</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Innovative ceiling solutions including suspended ceilings, false ceilings, and decorative ceiling installations. We transform ordinary ceilings into architectural features.
+                </p>
+                
+                <div style="background: var(--bg-light); padding: 30px; border-radius: 15px; margin-top: 30px;">
+                    <h4 style="margin-bottom: 20px; color: var(--text-dark); font-size: 20px;">Our Ceiling Solutions:</h4>
+                    <div style="display: grid; gap: 12px;">
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Suspended Ceilings:</strong> Modern grid systems with acoustic properties</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>False Ceilings:</strong> Gypsum and POP ceiling installations</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Decorative Designs:</strong> Custom patterns and LED integration</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Acoustic Solutions:</strong> Sound dampening ceiling systems</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px; padding: 25px; background: white; border-left: 4px solid var(--primary-pink); border-radius: 10px;">
+                    <p style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Why Choose Our Ceiling Works?</p>
+                    <p style="color: var(--text-light); font-size: 15px; line-height: 1.7;">Conceals wiring and pipes, improves acoustics, energy-efficient design, and enhances aesthetic appeal of your space.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Corner Integrated Section - Partition Works -->
+    <div class="corner-integrated">
+        <div class="corner-grid">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 42px; margin-bottom: 15px; color: var(--text-dark); font-weight: 700;">Partition Systems</h2>
+                <p style="font-size: 18px; color: var(--text-light); max-width: 700px; margin: 0 auto;">
+                    Custom partition systems designed to optimize space utilization while maintaining design integrity
+                </p>
+            </div>
+
+            <div class="corner-img">
+                <div class="img-placeholder" style="height: 100%;">
+                    Partition Systems<br>Installation<br>(420x480)
+                </div>
+            </div>
+
+            <div class="corner-content-grid">
+                <div style="background: white; padding: 35px; border-radius: 15px; box-shadow: 0 5px 30px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--text-dark);">Gypsum Partitions</h3>
+                    <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 15px;">Lightweight, cost-effective walls with excellent sound insulation.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; color: var(--text-light); font-size: 14px;">✓ Quick installation</li>
+                        <li style="padding: 8px 0; color: var(--text-light); font-size: 14px;">✓ Easy to modify</li>
+                        <li style="padding: 8px 0; color: var(--text-light); font-size: 14px;">✓ Paint-ready finish</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 35px; border-radius: 15px; box-shadow: 0 5px 30px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--text-dark);">Glass Partitions</h3>
+                    <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 15px;">Modern, transparent solutions that maximize natural light.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; color: var(--text-light); font-size: 14px;">✓ Elegant appearance</li>
+                        <li style="padding: 8px 0; color: var(--text-light); font-size: 14px;">✓ Space perception</li>
+                        <li style="padding: 8px 0; color: var(--text-light); font-size: 14px;">✓ Light transmission</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 35px; border-radius: 15px; box-shadow: 0 5px 30px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 22px; margin-bottom: 15px; color: var(--text-dark);">Aluminum Frames</h3>
+                    <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 15px;">Durable, sleek partitions perfect for offices and commercial spaces.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; color: var(--text-light); font-size: 14px;">✓ High durability</li>
+                        <li style="padding: 8px 0; color: var(--text-light); font-size: 14px;">✓ Low maintenance</li>
+                        <li style="padding: 8px 0; color: var(--text-light); font-size: 14px;">✓ Professional look</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section with Magazine Layout -->
+    <section class="magazine-section bg-white">
+        <div class="diagonal-grid">
+            <div>
+                <h2 style="font-size: 42px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">Why Choose Our Interior Works?</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 25px;">
+                    Experience the difference with our professional craftsmanship and attention to detail.
+                </p>
+
+                <div style="display: grid; gap: 20px;">
+                    <div style="display: flex; gap: 15px; padding: 20px; background: var(--bg-light); border-radius: 12px;">
+                        <div style="font-size: 28px;">✅</div>
+                        <div>
+                            <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Expert Team</h4>
+                            <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Skilled craftsmen with years of experience ensuring flawless execution</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; padding: 20px; background: var(--bg-light); border-radius: 12px;">
+                        <div style="font-size: 28px;">🔨</div>
+                        <div>
+                            <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Quality Materials</h4>
+                            <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Premium quality gypsum and materials from trusted suppliers</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; padding: 20px; background: var(--bg-light); border-radius: 12px;">
+                        <div style="font-size: 28px;">⏰</div>
+                        <div>
+                            <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">On-Time Delivery</h4>
+                            <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Efficient team ensuring timely project completion</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; padding: 20px; background: var(--bg-light); border-radius: 12px;">
+                        <div style="font-size: 28px;">💰</div>
+                        <div>
+                            <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Best Value</h4>
+                            <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Competitive pricing with transparent, no hidden costs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagonal-img">
+                <div class="img-placeholder" style="height: 600px;">
+                    Team at Work<br>Quality Assurance<br>(Full width)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-light">
+        <div style="background: var(--primary-dark); color: white; padding: 80px 60px; border-radius: 20px; text-align: center;">
+            <h2 style="font-size: 42px; margin-bottom: 20px; color: white;">Ready to Start Your Interior Project?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Contact us today for a free consultation and quote</p>
+            <a href="contact.html" class="cta-button">Get Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="bg-white">
+        <h2 class="section-title">Explore Other Services</h2>
+        <p class="section-subtitle">Complete solutions for all your technical needs</p>
+        
+        <div class="services-overview-grid">
+            <a href="finishing-works.html" class="service-overview-card">
+                <div class="service-icon">🎨</div>
+                <h3>Finishing Works</h3>
+                <p>Professional painting, cladding, and joinery services.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="flooring-works.html" class="service-overview-card">
+                <div class="service-icon">💎</div>
+                <h3>Flooring Works</h3>
+                <p>Elegant marble work and expert tile installation.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="technical-services.html" class="service-overview-card">
+                <div class="service-icon">⚡</div>
+                <h3>Technical Services</h3>
+                <p>Complete MEP and plumbing solutions.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="fitout.html" class="service-overview-card">
+                <div class="service-icon">🏢</div>
+                <h3>Fit-Out Solutions</h3>
+                <p>End-to-end fit-out for all project types.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Heaven Technical Services</h4>
+                <p>Leading provider of high-quality interior and fit-out solutions in Dubai, UAE.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="interior-works.html">Interior Works</a></li>
+                    <li><a href="finishing-works.html">Finishing Works</a></li>
+                    <li><a href="flooring-works.html">Flooring Works</a></li>
+                    <li><a href="technical-services.html">Technical Services</a></li>
+                    <li><a href="fitout.html">Fit-Out Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📧 info@heaventech.com</p>
+                <p>📞 +971 XX XXX XXXX</p>
+                <p>📍 Dubai, UAE</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heaven Technical Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

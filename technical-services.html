@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Services - MEP & Plumbing Solutions | Heaven Technical Services</title>
+    <meta name="description" content="Professional finishing works including painting, cladding, and joinery services in Dubai, UAE.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Overlapping Image Styles */
+        .overlap-section {
+            position: relative;
+            padding: 100px 40px;
+            overflow: visible;
+        }
+
+        .overlap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .overlap-img {
+            position: absolute;
+            right: -100px;
+            top: 50px;
+            width: 500px;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            transform: rotate(3deg);
+            z-index: 5;
+            border: 5px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: fadeInRotate 1s ease forwards 0.4s;
+        }
+
+        .overlap-img:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes fadeInRotate {
+            from {
+                opacity: 0;
+                transform: rotate(3deg) translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(3deg) translateX(0);
+            }
+        }
+
+        .overlap-img::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-pink);
+            opacity: 0.2;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+
+        .overlap-img:hover::after {
+            width: 150px;
+            height: 150px;
+            opacity: 0.3;
+        }
+
+        .overlap-content {
+            max-width: 650px;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+        }
+
+        .side-overlap-section {
+            position: relative;
+            padding: 120px 40px;
+            background: var(--bg-white);
+        }
+
+        .side-overlap-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .side-img-stack {
+            position: relative;
+            height: 600px;
+        }
+
+        .side-img-back {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 85%;
+            height: 520px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            z-index: 1;
+            border: 4px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: slideInLeft 1s ease forwards 0.3s;
+        }
+
+        .side-img-back:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 30px 80px rgba(216, 63, 135, 0.3);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .side-img-front {
+            position: absolute;
+            right: 0;
+            bottom: 40px;
+            width: 70%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            z-index: 2;
+            border: 6px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: slideInRight 1s ease forwards 0.6s;
+        }
+
+        .side-img-front:hover {
+            transform: translateX(10px) scale(1.05);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .diagonal-section {
+            position: relative;
+            padding: 120px 40px;
+            overflow: hidden;
+            background: var(--bg-white);
+        }
+
+        .diagonal-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .diagonal-img {
+            position: relative;
+            transform: rotate(-2deg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            transition: all 0.6s ease;
+            border: 5px solid var(--primary-pink);
+            opacity: 0;
+            animation: fadeInDiagonal 1s ease forwards 0.4s;
+        }
+
+        .diagonal-img:hover {
+            transform: rotate(0deg) scale(1.03);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes fadeInDiagonal {
+            from {
+                opacity: 0;
+                transform: rotate(-2deg) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(-2deg) scale(1);
+            }
+        }
+
+        .diagonal-img::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            width: 80px;
+            height: 80px;
+            background: var(--primary-pink);
+            opacity: 0.3;
+            border-radius: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .diagonal-img:hover::after {
+            width: 120px;
+            height: 120px;
+            opacity: 0.4;
+        }
+
+        .floating-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-pink);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(216, 63, 135, 0.4);
+            z-index: 20;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .overlap-img img,
+        .side-img-back img,
+        .side-img-front img,
+        .diagonal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .overlap-img:hover img,
+        .side-img-back:hover img,
+        .side-img-front:hover img,
+        .diagonal-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlap-img:hover,
+        .side-img-front:hover,
+        .diagonal-img:hover {
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.5), 
+                        0 0 40px rgba(216, 63, 135, 0.3);
+        }
+
+        @media (max-width: 1200px) {
+            .overlap-img {
+                position: relative;
+                right: 0;
+                width: 100%;
+                max-width: 500px;
+                margin: 40px auto;
+                transform: none;
+            }
+
+            .overlap-content {
+                max-width: 100%;
+            }
+
+            .side-overlap-grid,
+            .diagonal-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .side-img-stack {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-placeholder">HTS</div>
+                <span>Heaven Technical Services</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="services-dropdown">
+                    <a href="services.html" class="active">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="services.html">All Services</a>
+                        <a href="interior-works.html">Interior Works</a>
+                        <a href="finishing-works.html">Finishing Works</a>
+                        <a href="flooring-works.html">Flooring Works</a>
+                        <a href="technical-services.html" style="background: var(--bg-light); color: var(--primary-pink);">Technical Services</a>
+                        <a href="fitout.html">Fit-Out Solutions</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html">Home</a> / <a href="services.html">Services</a> / <span>Technical Services</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero small">
+        <div class="hero-content">
+            <h1>Technical Services</h1>
+            <p>Complete MEP solutions and reliable plumbing services for residential and commercial projects</p>
+        </div>
+    </section>
+
+    <!-- Overlap Section - Introduction -->
+    <div class="overlap-section bg-light">
+        <div class="overlap-container">
+            <div class="overlap-img">
+                <div class="floating-badge">24/7 Available</div>
+                <div class="img-placeholder" style="height: 100%;">
+                    MEP Systems<br>Installation Photo<br>(500x600)
+                </div>
+            </div>
+
+            <div class="overlap-content">
+                <h2 style="font-size: 38px; margin-bottom: 20px; color: var(--text-dark); font-weight: 700;">Expert Technical Solutions</h2>
+                <p style="font-size: 17px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Our technical services division provides comprehensive MEP (Mechanical, Electrical, Plumbing) solutions and specialized plumbing services for all types of projects.
+                </p>
+                <p style="font-size: 17px; color: var(--text-light); line-height: 1.9; margin-bottom: 25px;">
+                    From design to installation and maintenance, we ensure your systems work flawlessly with certified technicians and quality equipment.
+                </p>
+                <div style="display: flex; gap: 30px; margin-top: 25px;">
+                    <div>
+                        <h4 style="font-size: 36px; color: var(--primary-pink); font-weight: 700; margin-bottom: 5px;">400+</h4>
+                        <p style="color: var(--text-light); font-size: 14px;">Systems Installed</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 36px; color: var(--primary-pink); font-weight: 700; margin-bottom: 5px;">24/7</h4>
+                        <p style="color: var(--text-light); font-size: 14px;">Emergency Service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Overlap Section - MEP Solutions -->
+    <div class="side-overlap-section">
+        <div class="side-overlap-grid">
+            <div>
+                <h2 style="font-size: 42px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">MEP Solutions</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Integrated Mechanical, Electrical & Plumbing services for complete building systems. Our certified team delivers professional installations with quality assurance.
+                </p>
+                
+                <h4 style="margin-top: 30px; margin-bottom: 20px; color: var(--text-dark); font-size: 22px;">Our MEP Services:</h4>
+                <div style="display: grid; gap: 15px;">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">❄️</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">HVAC systems, air conditioning, and ventilation</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">⚡</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Electrical installations and power distribution</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">💧</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Water supply, drainage, and sewage systems</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">🔥</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Fire fighting and safety systems</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">🤖</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Building automation and smart controls</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-img-stack">
+                <div class="side-img-back">
+                    <div class="img-placeholder" style="height: 100%;">
+                        MEP Installation<br>Process Photo<br>(85% width)
+                    </div>
+                </div>
+                <div class="side-img-front">
+                    <div class="img-placeholder" style="height: 100%;">
+                        Technical Work<br>Detail Shot<br>(70% width)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diagonal Section - Plumbing Services -->
+    <div class="diagonal-section">
+        <div class="diagonal-grid">
+            <div class="diagonal-img">
+                <div class="img-placeholder" style="height: 550px;">
+                    Plumbing Work<br>Project Photo<br>(Full width)
+                </div>
+            </div>
+
+            <div>
+                <h2 style="font-size: 42px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">Plumbing Services</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Reliable plumbing solutions for every need. From general repairs to complete system installations, we provide fast and professional service.
+                </p>
+                
+                <div style="background: var(--bg-light); padding: 30px; border-radius: 15px; margin-top: 30px;">
+                    <h4 style="margin-bottom: 20px; color: var(--text-dark); font-size: 20px;">Comprehensive Services:</h4>
+                    <div style="display: grid; gap: 12px;">
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>General Plumbing:</strong> Pipe installation, leak repairs, and fixture fitting</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Bathroom & Kitchen:</strong> Complete installations and renovations</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Water Heaters:</strong> Installation and maintenance of all heater types</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Emergency Service:</strong> 24/7 availability for urgent issues</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px; padding: 25px; background: white; border-left: 4px solid var(--primary-pink); border-radius: 10px;">
+                    <p style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Fast & Reliable Service</p>
+                    <p style="color: var(--text-light); font-size: 15px; line-height: 1.7;">Quick response times, certified technicians, quality materials, and guaranteed workmanship for your peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Detail Section - MEP Systems -->
+    <section class="bg-light">
+        <h2 class="section-title">Specialized MEP Systems</h2>
+        <p class="section-subtitle">Advanced technical solutions for modern buildings</p>
+
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h3>🔥 Fire Fighting Systems</h3>
+                <p>Safety-critical fire protection and suppression systems for complete building safety.</p>
+                <ul class="service-features">
+                    <li>Fire sprinkler system installation</li>
+                    <li>Fire alarm and detection systems</li>
+                    <li>Fire hydrant installations</li>
+                    <li>Fire pump setups</li>
+                    <li>Emergency lighting systems</li>
+                    <li>Safety compliance certification</li>
+                </ul>
+            </div>
+
+            <div class="service-detail-card">
+                <h3>🤖 Building Automation</h3>
+                <p>Smart building management systems for optimal efficiency and control.</p>
+                <ul class="service-features">
+                    <li>BMS system installation</li>
+                    <li>HVAC control automation</li>
+                    <li>Energy management systems</li>
+                    <li>Access control integration</li>
+                    <li>Smart lighting controls</li>
+                    <li>Remote monitoring setup</li>
+                </ul>
+            </div>
+
+            <div class="service-detail-card">
+                <h3>🔧 System Integration</h3>
+                <p>Seamless integration of all MEP systems for unified and efficient operation.</p>
+                <ul class="service-features">
+                    <li>Complete system coordination</li>
+                    <li>Testing and commissioning</li>
+                    <li>Performance optimization</li>
+                    <li>Documentation and training</li>
+                    <li>Warranty and support services</li>
+                    <li>Annual maintenance contracts</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plumbing Services Detail -->
+    <section class="bg-white">
+        <h2 class="section-title">Complete Plumbing Solutions</h2>
+        <p class="section-subtitle">Professional services for all your plumbing needs</p>
+
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h3>🚿 Bathroom Plumbing</h3>
+                <p>Complete bathroom plumbing installations and renovations with waterproofing.</p>
+                <ul class="service-features">
+                    <li>Toilet installation and repair</li>
+                    <li>Shower and bathtub fitting</li>
+                    <li>Bathroom fixture installations</li>
+                    <li>Bidet installations</li>
+                    <li>Drainage solutions</li>
+                    <li>Waterproofing services</li>
+                </ul>
+            </div>
+
+            <div class="service-detail-card">
+                <h3>🍳 Kitchen Plumbing</h3>
+                <p>Professional kitchen plumbing for efficient water supply and drainage systems.</p>
+                <ul class="service-features">
+                    <li>Kitchen sink installations</li>
+                    <li>Dishwasher connections</li>
+                    <li>Garbage disposal fitting</li>
+                    <li>Water filtration systems</li>
+                    <li>Kitchen drainage solutions</li>
+                    <li>Grease trap maintenance</li>
+                </ul>
+            </div>
+
+            <div class="service-detail-card">
+                <h3>⚠️ Emergency Services</h3>
+                <p>24/7 emergency plumbing services for urgent issues with fast response time.</p>
+                <ul class="service-features">
+                    <li>Burst pipe repairs</li>
+                    <li>Emergency leak fixing</li>
+                    <li>Blocked toilet clearing</li>
+                    <li>Overflow prevention</li>
+                    <li>Fast response guaranteed</li>
+                    <li>Available 24/7</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-light">
+        <h2 class="section-title">Why Choose Our Technical Services?</h2>
+        <p class="section-subtitle">Trusted expertise for all your technical needs</p>
+
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px;">
+            <div style="display: flex; gap: 15px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                <div style="font-size: 32px;">✅</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Certified Technicians</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Fully licensed and certified professionals with extensive experience</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                <div style="font-size: 32px;">🔧</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Quality Equipment</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Using latest tools and premium quality materials</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                <div style="font-size: 32px;">⚡</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Fast Response</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Quick response times for all service requests</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                <div style="font-size: 32px;">💯</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Guaranteed Work</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Warranty on all installations and repairs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-white">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="background: var(--primary-dark); color: white; padding: 80px 60px; border-radius: 20px; text-align: center;">
+                <h2 style="font-size: 42px; margin-bottom: 20px; color: white;">Need Technical Services?</h2>
+                <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Contact us today for professional MEP and plumbing solutions</p>
+                <a href="contact.html" class="cta-button">Get Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="bg-light">
+        <h2 class="section-title">Explore Other Services</h2>
+        <p class="section-subtitle">Complete solutions for all your needs</p>
+        
+        <div class="services-overview-grid">
+            <a href="interior-works.html" class="service-overview-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Interior Works</h3>
+                <p>Gypsum, ceiling, and partition systems.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="finishing-works.html" class="service-overview-card">
+                <div class="service-icon">🎨</div>
+                <h3>Finishing Works</h3>
+                <p>Painting, cladding, and joinery services.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="flooring-works.html" class="service-overview-card">
+                <div class="service-icon">💎</div>
+                <h3>Flooring Works</h3>
+                <p>Marble work and tile installation.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="fitout.html" class="service-overview-card">
+                <div class="service-icon">🏢</div>
+                <h3>Fit-Out Solutions</h3>
+                <p>Complete fit-out services.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Heaven Technical Services</h4>
+                <p>Leading provider of high-quality interior and fit-out solutions in Dubai, UAE.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="interior-works.html">Interior Works</a></li>
+                    <li><a href="finishing-works.html">Finishing Works</a></li>
+                    <li><a href="flooring-works.html">Flooring Works</a></li>
+                    <li><a href="technical-services.html">Technical Services</a></li>
+                    <li><a href="fitout.html">Fit-Out Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📧 info@heaventech.com</p>
+                <p>📞 +971 XX XXX XXXX</p>
+                <p>📍 Dubai, UAE</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heaven Technical Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

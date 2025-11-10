@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finishing Works - Painting, Cladding & Joinery Services | Heaven Technical Services</title>
+    <meta name="description" content="Professional finishing works including painting, cladding, and joinery services in Dubai, UAE.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Same image styles as interior-works.html */
+        .hero.small {
+            background-image: url('../images/finishing.png');
+        }
+
+        .overlap-section {
+            position: relative;
+            padding: 100px 40px;
+            overflow: visible;
+        }
+
+        .overlap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .overlap-img {
+            position: absolute;
+            right: -100px;
+            top: 50px;
+            width: 500px;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            transform: rotate(3deg);
+            z-index: 5;
+            border: 5px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: fadeInRotate 1s ease forwards 0.4s;
+        }
+
+        .overlap-img:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes fadeInRotate {
+            from {
+                opacity: 0;
+                transform: rotate(3deg) translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(3deg) translateX(0);
+            }
+        }
+
+        .overlap-img::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-pink);
+            opacity: 0.2;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+
+        .overlap-img:hover::after {
+            width: 150px;
+            height: 150px;
+            opacity: 0.3;
+        }
+
+        .overlap-content {
+            max-width: 650px;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+        }
+
+        .side-overlap-section {
+            position: relative;
+            padding: 120px 40px;
+            background: var(--bg-white);
+        }
+
+        .side-overlap-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .side-img-stack {
+            position: relative;
+            height: 600px;
+        }
+
+        .side-img-back {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 85%;
+            height: 520px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            z-index: 1;
+            border: 4px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: slideInLeft 1s ease forwards 0.3s;
+        }
+
+        .side-img-back:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 30px 80px rgba(216, 63, 135, 0.3);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .side-img-front {
+            position: absolute;
+            right: 0;
+            bottom: 40px;
+            width: 70%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            z-index: 2;
+            border: 6px solid var(--primary-pink);
+            transition: all 0.6s ease;
+            opacity: 0;
+            animation: slideInRight 1s ease forwards 0.6s;
+        }
+
+        .side-img-front:hover {
+            transform: translateX(10px) scale(1.05);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .diagonal-section {
+            position: relative;
+            padding: 120px 40px;
+            overflow: hidden;
+            background: var(--bg-white);
+        }
+
+        .diagonal-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .diagonal-img {
+            position: relative;
+            transform: rotate(-2deg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            transition: all 0.6s ease;
+            border: 5px solid var(--primary-pink);
+            opacity: 0;
+            animation: fadeInDiagonal 1s ease forwards 0.4s;
+        }
+
+        .diagonal-img:hover {
+            transform: rotate(0deg) scale(1.03);
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.4);
+            border-color: var(--accent-coral);
+        }
+
+        @keyframes fadeInDiagonal {
+            from {
+                opacity: 0;
+                transform: rotate(-2deg) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(-2deg) scale(1);
+            }
+        }
+
+        .diagonal-img::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            width: 80px;
+            height: 80px;
+            background: var(--primary-pink);
+            opacity: 0.3;
+            border-radius: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .diagonal-img:hover::after {
+            width: 120px;
+            height: 120px;
+            opacity: 0.4;
+        }
+
+        .floating-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-pink);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(216, 63, 135, 0.4);
+            z-index: 20;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .overlap-img img,
+        .side-img-back img,
+        .side-img-front img,
+        .diagonal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .overlap-img:hover img,
+        .side-img-back:hover img,
+        .side-img-front:hover img,
+        .diagonal-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlap-img:hover,
+        .side-img-front:hover,
+        .diagonal-img:hover {
+            box-shadow: 0 40px 100px rgba(216, 63, 135, 0.5), 
+                        0 0 40px rgba(216, 63, 135, 0.3);
+        }
+
+        @media (max-width: 1200px) {
+            .overlap-img {
+                position: relative;
+                right: 0;
+                width: 100%;
+                max-width: 500px;
+                margin: 40px auto;
+                transform: none;
+            }
+
+            .overlap-content {
+                max-width: 100%;
+            }
+
+            .side-overlap-grid,
+            .diagonal-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .side-img-stack {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-placeholder">HTS</div>
+                <span>Heaven Technical Services</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="services-dropdown">
+                    <a href="services.html" class="active">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="services.html">All Services</a>
+                        <a href="interior-works.html">Interior Works</a>
+                        <a href="finishing-works.html" style="background: var(--bg-light); color: var(--primary-pink);">Finishing Works</a>
+                        <a href="flooring-works.html">Flooring Works</a>
+                        <a href="technical-services.html">Technical Services</a>
+                        <a href="fitout.html">Fit-Out Solutions</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html">Home</a> / <a href="services.html">Services</a> / <span>Finishing Works</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero small">
+        <div class="hero-content">
+            <h1>Finishing Works</h1>
+            <p>Professional painting, cladding, and joinery services with premium finishes for lasting beauty</p>
+        </div>
+    </section>
+
+    <!-- Overlap Section - Introduction -->
+    <div class="overlap-section bg-light">
+        <div class="overlap-container">
+            <div class="overlap-img">
+                <div class="floating-badge">Premium Finishes</div>
+                <div class="img-placeholder" style="height: 100%;">
+                    <img src="/images/finishing.png">
+                </div>
+            </div>
+
+            <div class="overlap-content">
+                <h2 style="font-size: 38px; margin-bottom: 20px; color: var(--text-dark); font-weight: 700;">Transform with Perfect Finishes</h2>
+                <p style="font-size: 17px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Our finishing works division specializes in painting, cladding, and joinery services that add the final touch of excellence to your interiors and exteriors.
+                </p>
+                <p style="font-size: 17px; color: var(--text-light); line-height: 1.9; margin-bottom: 25px;">
+                    From premium paint finishes to elegant cladding and custom joinery, we deliver craftsmanship that enhances both aesthetics and functionality.
+                </p>
+                <div style="display: flex; gap: 30px; margin-top: 25px;">
+                    <div>
+                        <h4 style="font-size: 36px; color: var(--primary-pink); font-weight: 700; margin-bottom: 5px;">300+</h4>
+                        <p style="color: var(--text-light); font-size: 14px;">Finishing Projects</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 36px; color: var(--primary-pink); font-weight: 700; margin-bottom: 5px;">15+</h4>
+                        <p style="color: var(--text-light); font-size: 14px;">Years Expertise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Overlap Section - Painting Service -->
+    <div class="side-overlap-section">
+        <div class="side-overlap-grid">
+            <div>
+                <h2 style="font-size: 42px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">Painting Finishes</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    Professional painting services with premium finishes for interior and exterior surfaces. Our skilled painters ensure flawless application and lasting beauty.
+                </p>
+                
+                <h4 style="margin-top: 30px; margin-bottom: 20px; color: var(--text-dark); font-size: 22px;">What We Offer:</h4>
+                <div style="display: grid; gap: 15px;">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Interior and exterior painting</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Texture painting and decorative finishes</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Weather-resistant coatings</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Spray painting services</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <span style="color: var(--primary-pink); font-size: 20px; font-weight: bold;">✓</span>
+                        <span style="color: var(--text-light); line-height: 1.7;">Color consultation and matching</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-img-stack">
+                <div class="side-img-back">
+                    <div class="img-placeholder" style="height: 100%;">
+                        <img src="/images/painting-before.png">
+                    </div>
+                </div>
+                <div class="side-img-front">
+                    <div class="img-placeholder" style="height: 100%;">
+                        <img src="/images/painting.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diagonal Section - Cladding Works -->
+    <div class="diagonal-section">
+        <div class="diagonal-grid">
+            <div class="diagonal-img">
+                <div class="img-placeholder" style="height: 550px;">
+                    <img src="/images/cladding.jpg">
+                </div>
+            </div>
+
+            <div>
+                <h2 style="font-size: 42px; margin-bottom: 25px; color: var(--text-dark); font-weight: 700;">Cladding Works</h2>
+                <p style="font-size: 18px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px;">
+                    High-quality cladding solutions for interior and exterior surfaces with modern aesthetic appeal and superior durability.
+                </p>
+                
+                <div style="background: var(--bg-light); padding: 30px; border-radius: 15px; margin-top: 30px;">
+                    <h4 style="margin-bottom: 20px; color: var(--text-dark); font-size: 20px;">Our Cladding Solutions:</h4>
+                    <div style="display: grid; gap: 12px;">
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Stone Cladding:</strong> Natural stone and engineered stone finishes</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Wood Cladding:</strong> Premium wood and WPC cladding systems</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>ACP Cladding:</strong> Aluminum composite panels for modern aesthetics</p>
+                        <p style="color: var(--text-light); line-height: 1.7;"><strong>Tile Cladding:</strong> Decorative and functional tile systems</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px; padding: 25px; background: white; border-left: 4px solid var(--primary-pink); border-radius: 10px;">
+                    <p style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Why Choose Our Cladding?</p>
+                    <p style="color: var(--text-light); font-size: 15px; line-height: 1.7;">Weather protection, enhanced insulation, modern aesthetics, and low maintenance requirements for long-lasting beauty.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Detail Section - Joinery -->
+    <section class="bg-light">
+        <h2 class="section-title">Joinery & Carpentry</h2>
+        <p class="section-subtitle">Custom woodwork crafted with precision and excellence</p>
+
+        <div class="service-detail-grid">
+            <div class="service-detail-card">
+                <h3>Custom Furniture</h3>
+                <p>Bespoke furniture designed and built to your exact specifications and style preferences.</p>
+                <ul class="service-features">
+                    <li>Custom wardrobes and closets</li>
+                    <li>Built-in cabinets and shelving</li>
+                    <li>Kitchen cabinetry</li>
+                    <li>Reception and office furniture</li>
+                    <li>Display units and showcases</li>
+                </ul>
+            </div>
+
+            <div class="service-detail-card">
+                <h3>Decorative Woodwork</h3>
+                <p>Elegant wooden elements that add character and warmth to your spaces.</p>
+                <ul class="service-features">
+                    <li>Wall paneling and wainscoting</li>
+                    <li>Wooden ceiling features</li>
+                    <li>Decorative moldings and trim</li>
+                    <li>Custom door frames</li>
+                    <li>Wooden accent walls</li>
+                </ul>
+            </div>
+
+            <div class="service-detail-card">
+                <h3>Commercial Joinery</h3>
+                <p>Professional joinery solutions for retail, hospitality, and office spaces.</p>
+                <ul class="service-features">
+                    <li>Retail display fixtures</li>
+                    <li>Restaurant and cafe fit-outs</li>
+                    <li>Office partitions and workstations</li>
+                    <li>Reception desks</li>
+                    <li>Commercial storage solutions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="bg-white">
+        <h2 class="section-title">Why Choose Our Finishing Works?</h2>
+        <p class="section-subtitle">Excellence in every detail</p>
+
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px;">
+            <div style="display: flex; gap: 15px; padding: 30px; background: var(--bg-light); border-radius: 15px;">
+                <div style="font-size: 32px;">✅</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Expert Craftsmen</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Skilled professionals with years of experience in finishing works</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; padding: 30px; background: var(--bg-light); border-radius: 15px;">
+                <div style="font-size: 32px;">🎨</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Premium Materials</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Only the finest paints, materials, and wood products</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; padding: 30px; background: var(--bg-light); border-radius: 15px;">
+                <div style="font-size: 32px;">⏰</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Timely Completion</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Projects completed on schedule without compromising quality</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; padding: 30px; background: var(--bg-light); border-radius: 15px;">
+                <div style="font-size: 32px;">💎</div>
+                <div>
+                    <h4 style="font-size: 18px; margin-bottom: 10px; color: var(--text-dark);">Perfect Finish</h4>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.7;">Attention to detail ensuring flawless final results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-light">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="background: var(--primary-dark); color: white; padding: 80px 60px; border-radius: 20px; text-align: center;">
+                <h2 style="font-size: 42px; margin-bottom: 20px; color: white;">Ready to Start Your Finishing Project?</h2>
+                <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Contact us today for a free consultation and quote</p>
+                <a href="contact.html" class="cta-button">Get Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="bg-white">
+        <h2 class="section-title">Explore Other Services</h2>
+        <p class="section-subtitle">Complete solutions for all your needs</p>
+        
+        <div class="services-overview-grid">
+            <a href="interior-works.html" class="service-overview-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Interior Works</h3>
+                <p>Gypsum, ceiling, and partition systems.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="flooring-works.html" class="service-overview-card">
+                <div class="service-icon">💎</div>
+                <h3>Flooring Works</h3>
+                <p>Marble work and tile installation.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="technical-services.html" class="service-overview-card">
+                <div class="service-icon">⚡</div>
+                <h3>Technical Services</h3>
+                <p>MEP and plumbing solutions.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+
+            <a href="fitout.html" class="service-overview-card">
+                <div class="service-icon">🏢</div>
+                <h3>Fit-Out Solutions</h3>
+                <p>Complete fit-out services.</p>
+                <span class="learn-more">Learn More →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Heaven Technical Services</h4>
+                <p>Leading provider of high-quality interior and fit-out solutions in Dubai, UAE.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="interior-works.html">Interior Works</a></li>
+                    <li><a href="finishing-works.html">Finishing Works</a></li>
+                    <li><a href="flooring-works.html">Flooring Works</a></li>
+                    <li><a href="technical-services.html">Technical Services</a></li>
+                    <li><a href="fitout.html">Fit-Out Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📧 info@heaventech.com</p>
+                <p>📞 +971 XX XXX XXXX</p>
+                <p>📍 Dubai, UAE</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heaven Technical Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
