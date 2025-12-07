@@ -39,21 +39,23 @@ body::before {
     top: 8%;
     right: 15%;
     font-size: 60px;
-    opacity: 0.4;
+    opacity: 0.9;
     z-index: -1;
     pointer-events: none;
-    animation: moonGlow 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+    filter: grayscale(100%) brightness(150%) drop-shadow(0 0 10px silver) drop-shadow(0 0 20px silver);
+    animation: moonTwinkle 2s ease-in-out infinite;
 }
 
-@keyframes moonGlow {
+@keyframes moonTwinkle {
     0%, 100% { 
-        opacity: 0.4;
-        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+        opacity: 0.6;
+        filter: grayscale(100%) brightness(150%) drop-shadow(0 0 10px silver) drop-shadow(0 0 20px silver);
+        transform: scale(1);
     }
     50% { 
-        opacity: 0.6;
-        filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.8));
+        opacity: 1;
+        filter: grayscale(100%) brightness(200%) drop-shadow(0 0 30px white) drop-shadow(0 0 50px silver) drop-shadow(0 0 70px silver);
+        transform: scale(1.05);
     }
 }
 
@@ -66,16 +68,20 @@ body::after {
     opacity: 0.3;
     z-index: -1;
     pointer-events: none;
-    animation: gentleSparkle 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    filter: grayscale(100%) brightness(150%) drop-shadow(0 0 8px silver) drop-shadow(0 0 15px silver);
+    animation: starTwinkle 2.5s ease-in-out infinite;
 }
 
-@keyframes gentleSparkle {
+@keyframes starTwinkle {
     0%, 100% { 
-        opacity: 0.2;
+        opacity: 0.3;
+        filter: grayscale(100%) brightness(150%) drop-shadow(0 0 8px silver) drop-shadow(0 0 15px silver);
+        transform: scale(1);
     }
     50% { 
-        opacity: 0.5;
+        opacity: 0.8;
+        filter: grayscale(100%) brightness(200%) drop-shadow(0 0 20px white) drop-shadow(0 0 35px silver);
+        transform: scale(1.2);
     }
 }
 
@@ -229,30 +235,6 @@ nav.scrolled {
     overflow: hidden;
 }
 
-.hero::before {
-    content: '☁️';
-    position: absolute;
-    font-size: 100px;
-    top: 12%;
-    left: 8%;
-    opacity: 0.5;
-    animation: cloudFloat1 30s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
-    z-index: 1;
-}
-
-.hero::after {
-    content: '☁️';
-    position: absolute;
-    font-size: 90px;
-    top: 20%;
-    right: 10%;
-    opacity: 0.45;
-    animation: cloudFloat2 25s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
-    z-index: 1;
-}
-
 @keyframes cloudFloat1 {
     0%, 100% { transform: translate(0, 0); }
     50% { transform: translate(20px, -15px); }
@@ -294,33 +276,6 @@ nav.scrolled {
     50% { 
         opacity: 0.5;
     }
-}
-
-/* Add multiple stars throughout the page */
-nav::before {
-    content: '⭐';
-    position: fixed;
-    top: 25%;
-    left: 10%;
-    font-size: 35px;
-    opacity: 0.6;
-    animation: sparkle 4s ease-in-out infinite;
-    z-index: -1;
-    pointer-events: none;
-    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
-}
-
-nav::after {
-    content: '✨';
-    position: fixed;
-    bottom: 20%;
-    right: 8%;
-    font-size: 40px;
-    opacity: 0.6;
-    animation: sparkle 3.5s ease-in-out infinite 0.5s;
-    z-index: -1;
-    pointer-events: none;
-    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.7));
 }
 
 .hero.small {
@@ -412,22 +367,6 @@ section {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-}
-
-section::before {
-    content: '☁️   ☁️   ☁️';
-    position: absolute;
-    top: 5%;
-    left: 0;
-    width: 100%;
-    font-size: 60px;
-    opacity: 0.35;
-    text-align: center;
-    pointer-events: none;
-    z-index: 0;
-    letter-spacing: 120px;
-    animation: sectionClouds 60s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
 }
 
 section::after {
@@ -950,7 +889,7 @@ footer::before {
     top: 20px;
     left: 10%;
     font-size: 50px;
-    opacity: 0.25;
+    opacity: 0.1;
     animation: cloudFloat1 35s ease-in-out infinite;
     pointer-events: none;
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
@@ -962,7 +901,7 @@ footer::after {
     top: 30px;
     right: 15%;
     font-size: 35px;
-    opacity: 0.3;
+    opacity: 0.1;
     animation: moonGlow 5s ease-in-out infinite 0.5s;
     pointer-events: none;
 }
